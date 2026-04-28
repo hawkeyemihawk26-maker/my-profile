@@ -1,119 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sanjay Behera | Vibe Architect</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjay Behera | Solo Developer & Entrepreneur</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;900&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  </head>
-  <body>
-    <div id="bg-canvas"></div>
+</head>
+<body>
+    <!-- Pre-loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <span class="loader-text">SANJAY BEHERA</span>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Noise Overlay -->
+    <div class="noise"></div>
     
-    <main>
-      <!-- Hero Section -->
-      <section id="hero" class="container">
-        <h1 class="hero-title">
-          <span class="text-gradient">Sanjay</span><br/>
-          <span>Behera</span>
-        </h1>
-        <p class="hero-sub">> Vibe Coding // AI Agents // Tech Memes</p>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+
+    <!-- Navigation -->
+    <nav class="sticky-nav">
+        <div class="nav-content">
+            <span class="nav-logo">S. BEHERA</span>
+            <div class="nav-links">
+                <a href="#about">Origin</a>
+                <a href="#projects">Work</a>
+                <a href="#contact">Build</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="full-screen">
+        <div class="video-container">
+            <!-- Cinematic background video placeholder -->
+            <video autoplay muted loop playsinline class="bg-video">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-dark-ink-swirling-in-water-4331-large.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
         
-        <div class="scroll-indicator">
-          <i data-lucide="arrow-down" class="animate-bounce"></i>
+        <div class="hero-content container">
+            <div class="year-badge">EST. 2021</div>
+            <h1 class="hero-headline">
+                <div class="line"><span>I BUILD.</span></div>
+                <div class="line"><span>I SHIP.</span></div>
+                <div class="line"><span>I INFLUENCE.</span></div>
+            </h1>
+            <p class="hero-subtext">Developer. Entrepreneur. Content Creator.</p>
+            
+            <div class="scroll-explore magnetic" data-strength="30">
+                <span>SCROLL TO EXPLORE</span>
+                <div class="scroll-line"></div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <!-- Stats Section -->
-      <section id="stats" class="container">
-        <div class="stats-ticker glass">
-          <div class="stat-item">
-            <span class="stat-value" data-target="900000">0</span>
-            <span class="stat-label">Viral Views</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-value" data-target="100000">0</span>
-            <span class="stat-label">Daily Surge</span>
-          </div>
+    <!-- 2. ABOUT / ORIGIN STORY -->
+    <section id="about" class="about-section">
+        <div class="container split-layout">
+            <div class="left-pin">
+                <div class="pinned-year">2021</div>
+            </div>
+            <div class="right-content">
+                <div class="story-block">
+                    <h2>Started with code.</h2>
+                    <p>From the first line of C++ in Mumbai, I knew this wasn't just a career. It was an obsession with creation.</p>
+                </div>
+                <div class="story-block">
+                    <h2>Built apps.</h2>
+                    <p>I didn't wait for permission. I built what I needed, then I built what others needed. Mobile, Web, AI — I explored it all.</p>
+                </div>
+                <div class="story-block">
+                    <h2>Broke things.</h2>
+                    <p>Failed startups. Corrupted databases. Late nights debugging logic that felt like a puzzle with missing pieces.</p>
+                </div>
+                <div class="story-block">
+                    <h2>Digital Influence.</h2>
+                    <p>Building isn't enough; telling the story is. I've cultivated a community of tech enthusiasts with over 1M+ total views and a consistent 100k+ daily reach. From coding deep-dives to AI memes, I bridge the gap between engineering and entertainment.</p>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <!-- Bento Content Vault -->
-      <section id="vault" class="container">
-        <h2 class="section-title">Content Vault</h2>
-        <div class="bento-grid">
-          <!-- Wide Card -->
-          <div class="bento-item glass grid-col-2 grid-row-2" style="grid-column: span 2; grid-row: span 2;">
-            <div class="card-content">
-              <div class="card-header">
-                <i data-lucide="video" class="accent-cyan"></i>
-                <span>Latest Content</span>
-              </div>
-              <div class="card-body">
-                <h3>Viral Reach</h3>
-                <p>900k+ views and counting across Instagram and YouTube.</p>
-              </div>
-              <a href="https://www.instagram.com/lifeof.sanjaybehera/" class="card-btn">Explore Feed</a>
+    <!-- 3. SKILLS / TECH -->
+    <section id="skills" class="skills-section full-screen">
+        <div class="container">
+            <h2 class="section-label">Tech Stack</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <span class="skill-num">01</span>
+                    <h3>React</h3>
+                    <p>Modern Web Frontend</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-num">02</span>
+                    <h3>Node.js</h3>
+                    <p>Scalable Backends</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-num">03</span>
+                    <h3>Android</h3>
+                    <p>Native Mobile Apps</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-num">04</span>
+                    <h3>AI & Agents</h3>
+                    <p>Claude, Antigravity, Codex</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-num">05</span>
+                    <h3>Database</h3>
+                    <p>Firebase & Supabase</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-num">06</span>
+                    <h3>Deployment</h3>
+                    <p>Vercel & Cloud infra</p>
+                </div>
             </div>
-          </div>
-
-          <!-- Small Card AI -->
-          <div class="bento-item glass">
-            <div class="card-content">
-              <i data-lucide="cpu" class="accent-magenta"></i>
-              <h3>AI Agents</h3>
-              <p>Building the future with Agentic workflows.</p>
-            </div>
-          </div>
-
-          <!-- Small Card Vibe -->
-          <div class="bento-item glass">
-            <div class="card-content">
-              <i data-lucide="code" class="accent-cyan"></i>
-              <h3>Vibe Coding</h3>
-              <p>Aesthetic, efficient, and purely vibe-based dev.</p>
-            </div>
-          </div>
-
-          <!-- Medium Card Meme -->
-          <div class="bento-item glass" style="grid-column: span 2;">
-            <div class="card-content">
-              <div class="flex justify-between items-center">
-                <h3>Meme Culture</h3>
-                <i data-lucide="laugh"></i>
-              </div>
-              <p>Bridging the gap between tech and humor for 100k+ daily fans.</p>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <!-- Brand Connect -->
-      <section id="brand" class="container">
-        <div class="brand-hub glass">
-          <div class="brand-info">
-            <h2>Let's Collaborate</h2>
-            <p>Elevate your brand with high-engagement tech content.</p>
-            <div class="contact-chips">
-              <div class="chip"><i data-lucide="mail"></i> beherasanjay312@gmail.com</div>
-              <div class="chip"><i data-lucide="phone"></i> +91 9768587208</div>
+    <!-- 4. PROJECTS (Horizontal Pin Scroll) -->
+    <section id="projects" class="horizontal-scroll-container">
+        <div class="projects-wrapper">
+            <!-- Project 01 -->
+            <div class="project-frame">
+                <div class="project-bg" style="background-image: url('https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=2000&auto=format&fit=crop');"></div>
+                <div class="project-info container">
+                    <span class="p-num">01</span>
+                    <h2 class="p-title">ViralFlow</h2>
+                    <p class="p-desc">Instagram Creator SaaS for automated growth.</p>
+                    <div class="p-tags">
+                        <span>SaaS</span><span>Social Media</span><span>Automation</span>
+                    </div>
+                    <a href="https://howtogetviral.web.app" target="_blank" class="p-cta">View Project →</a>
+                </div>
             </div>
-          </div>
-          <form action="https://formspree.io/f/beherasanjay312@gmail.com" method="POST" class="brand-form">
-            <input type="text" name="brand_name" placeholder="Brand Name" class="glass-input" required>
-            <input type="email" name="email" placeholder="Email" class="glass-input" required>
-            <textarea name="proposal" placeholder="Your Vision" class="glass-input" required></textarea>
-            <button type="submit" class="submit-btn glow">Send Proposal</button>
-          </form>
+            <!-- Project 02 -->
+            <div class="project-frame">
+                <div class="project-bg" style="background-image: url('https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?q=80&w=2000&auto=format&fit=crop');"></div>
+                <div class="project-info container">
+                    <span class="p-num">02</span>
+                    <h2 class="p-title">Digital Influence</h2>
+                    <p class="p-desc">Building a 1M+ Tech Community.</p>
+                    <div class="p-tags">
+                        <span>Content</span><span>Social</span><span>Branding</span>
+                    </div>
+                    <a href="https://www.instagram.com/lifeof.sanjaybehera/" target="_blank" class="p-cta">Visit Profile →</a>
+                </div>
+            </div>
+            <!-- Project 03 -->
+            <div class="project-frame">
+                <div class="project-bg" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop');"></div>
+                <div class="project-info container">
+                    <span class="p-num">03</span>
+                    <h2 class="p-title">LifeWatch AI</h2>
+                    <p class="p-desc">Health & Lifespan Tracker powered by AI.</p>
+                    <div class="p-tags">
+                        <span>HealthTech</span><span>AI</span><span>Personal Development</span>
+                    </div>
+                    <a href="https://thelifewatchai.web.app" target="_blank" class="p-cta">View Project →</a>
+                </div>
+            </div>
+            <!-- Project 04 -->
+            <div class="project-frame">
+                <div class="project-bg" style="background-image: url('/billvault-bg.png');"></div>
+                <div class="project-info container">
+                    <span class="p-num">04</span>
+                    <h2 class="p-title">BillVault Pro</h2>
+                    <p class="p-desc">Catering Bill Manager for scale.</p>
+                    <div class="p-tags">
+                        <span>FinTech</span><span>Management</span><span>Local Business</span>
+                    </div>
+                    <a href="https://billvaultpro.web.app" target="_blank" class="p-cta">View Project →</a>
+                </div>
+            </div>
+            <!-- Project 05 -->
+            <div class="project-frame">
+                <div class="project-bg" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop');"></div>
+                <div class="project-info container">
+                    <span class="p-num">05</span>
+                    <h2 class="p-title">CaterTrack</h2>
+                    <p class="p-desc">Expense Automation PWA.</p>
+                    <div class="p-tags">
+                        <span>PWA</span><span>Automation</span><span>Logistics</span>
+                    </div>
+                    <a href="#" class="p-cta">View Project →</a>
+                </div>
+            </div>
+            <!-- Project 06 -->
+            <div class="project-frame">
+                <div class="project-bg" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2000&auto=format&fit=crop'); filter: brightness(0.4) saturate(1.5);"></div>
+                <div class="project-info container">
+                    <span class="p-num">06</span>
+                    <h2 class="p-title">Claude Bird</h2>
+                    <p class="p-desc">Interactive Game built with Claude.</p>
+                    <div class="p-tags">
+                        <span>GameDev</span><span>AI</span><span>Fun</span>
+                    </div>
+                    <a href="https://claudbird.web.app/" target="_blank" class="p-cta">View Project →</a>
+                </div>
+            </div>
         </div>
-      </section>
-    </main>
+    </section>
+
+    <!-- 5. CONTENT / SOCIAL -->
+    <section id="content" class="content-section">
+        <div class="container">
+            <div class="content-header">
+                <h2>1M+ Global Reach.<br>Documenting the Hustle.</h2>
+                <div class="stats-row">
+                    <div class="stat"><span>1M+</span> Total Views</div>
+                    <div class="stat"><span>100k+</span> Daily Views</div>
+                    <div class="stat"><span>AI/Tech</span> Niche</div>
+                </div>
+            </div>
+            <div class="mosaic-grid">
+                <a href="https://www.instagram.com/lifeof.sanjaybehera/" target="_blank" class="mosaic-item m-large">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1974&auto=format&fit=crop" alt="Instagram">
+                    <div class="m-overlay">
+                        <span>INSTAGRAM</span>
+                        <h3>@lifeof.sanjaybehera</h3>
+                    </div>
+                </a>
+                <div class="mosaic-item"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop" alt="Coding"></div>
+                <div class="mosaic-item"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop" alt="AI & Tech"></div>
+                <div class="mosaic-item"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop" alt="Hardware"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CONTACT / CLOSING -->
+    <section id="contact" class="full-screen contact-section">
+        <div class="container">
+            <h2 class="contact-headline">Let's Build Something.</h2>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=beherasanjay312@gmail.com" target="_blank" class="email-cta">beherasanjay312@gmail.com</a>
+            
+            <div class="footer">
+                <div class="social-links">
+                    <a href="https://github.com/hawkeyemihawk26-maker" target="_blank">GITHUB</a>
+                    <a href="https://www.instagram.com/lifeof.sanjaybehera/" target="_blank">INSTAGRAM</a>
+                    <a href="https://www.youtube.com/@lifeofsanjaybehera" target="_blank">YOUTUBE</a>
+                    <a href="https://www.linkedin.com/in/sanjaykumarbehera9768/" target="_blank">LINKEDIN</a>
+                </div>
+                <p class="copyright">© 2026 SANJAY BEHERA — MUMBAI</p>
+            </div>
+        </div>
+    </section>
 
     <script type="module" src="/main.js"></script>
-  </body>
+</body>
 </html>
