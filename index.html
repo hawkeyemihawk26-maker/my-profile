@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sanjay Behera | Vibe Architect</title>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  </head>
+  <body>
+    <div id="bg-canvas"></div>
+    
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="container">
+        <h1 class="hero-title">
+          <span class="text-gradient">Sanjay</span><br/>
+          <span>Behera</span>
+        </h1>
+        <p class="hero-sub">> Vibe Coding // AI Agents // Tech Memes</p>
+        
+        <div class="scroll-indicator">
+          <i data-lucide="arrow-down" class="animate-bounce"></i>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section id="stats" class="container">
+        <div class="stats-ticker glass">
+          <div class="stat-item">
+            <span class="stat-value" data-target="900000">0</span>
+            <span class="stat-label">Viral Views</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-value" data-target="100000">0</span>
+            <span class="stat-label">Daily Surge</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bento Content Vault -->
+      <section id="vault" class="container">
+        <h2 class="section-title">Content Vault</h2>
+        <div class="bento-grid">
+          <!-- Wide Card -->
+          <div class="bento-item glass grid-col-2 grid-row-2" style="grid-column: span 2; grid-row: span 2;">
+            <div class="card-content">
+              <div class="card-header">
+                <i data-lucide="video" class="accent-cyan"></i>
+                <span>Latest Content</span>
+              </div>
+              <div class="card-body">
+                <h3>Viral Reach</h3>
+                <p>900k+ views and counting across Instagram and YouTube.</p>
+              </div>
+              <a href="https://www.instagram.com/lifeof.sanjaybehera/" class="card-btn">Explore Feed</a>
+            </div>
+          </div>
+
+          <!-- Small Card AI -->
+          <div class="bento-item glass">
+            <div class="card-content">
+              <i data-lucide="cpu" class="accent-magenta"></i>
+              <h3>AI Agents</h3>
+              <p>Building the future with Agentic workflows.</p>
+            </div>
+          </div>
+
+          <!-- Small Card Vibe -->
+          <div class="bento-item glass">
+            <div class="card-content">
+              <i data-lucide="code" class="accent-cyan"></i>
+              <h3>Vibe Coding</h3>
+              <p>Aesthetic, efficient, and purely vibe-based dev.</p>
+            </div>
+          </div>
+
+          <!-- Medium Card Meme -->
+          <div class="bento-item glass" style="grid-column: span 2;">
+            <div class="card-content">
+              <div class="flex justify-between items-center">
+                <h3>Meme Culture</h3>
+                <i data-lucide="laugh"></i>
+              </div>
+              <p>Bridging the gap between tech and humor for 100k+ daily fans.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Brand Connect -->
+      <section id="brand" class="container">
+        <div class="brand-hub glass">
+          <div class="brand-info">
+            <h2>Let's Collaborate</h2>
+            <p>Elevate your brand with high-engagement tech content.</p>
+            <div class="contact-chips">
+              <div class="chip"><i data-lucide="mail"></i> beherasanjay312@gmail.com</div>
+              <div class="chip"><i data-lucide="phone"></i> +91 9768587208</div>
+            </div>
+          </div>
+          <form action="https://formspree.io/f/beherasanjay312@gmail.com" method="POST" class="brand-form">
+            <input type="text" name="brand_name" placeholder="Brand Name" class="glass-input" required>
+            <input type="email" name="email" placeholder="Email" class="glass-input" required>
+            <textarea name="proposal" placeholder="Your Vision" class="glass-input" required></textarea>
+            <button type="submit" class="submit-btn glow">Send Proposal</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
