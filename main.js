@@ -8,8 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 // 1. Initialize Smooth Scroll (Lenis)
 const lenis = new Lenis({
-    duration: 1.5,
+    duration: 1.8,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    wheelMultiplier: 0.8,
     smoothWheel: true,
 });
 
@@ -58,13 +59,13 @@ function startHeroAnimations() {
 
 // 4. Custom Cursor with Magnetic Effect
 const cursor = document.querySelector('.cursor');
+// Create ultra-fast setters for real-time tracking
+const xTo = gsap.quickTo(cursor, "x", { duration: 0.01, ease: "none" });
+const yTo = gsap.quickTo(cursor, "y", { duration: 0.01, ease: "none" });
+
 window.addEventListener('mousemove', (e) => {
-    gsap.to(cursor, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.15,
-        ease: "power2.out"
-    });
+    xTo(e.clientX);
+    yTo(e.clientY);
 
     // Magnetic Elements Logic
     const magneticEls = document.querySelectorAll('.magnetic');
@@ -100,12 +101,16 @@ gsap.to(".pinned-year", {
         trigger: ".about-section",
         start: "top top",
         end: "bottom bottom",
-        scrub: true,
+        scrub: 1, // Smooth scrub
         pin: ".left-pin",
         anticipatePin: 1
     },
     innerText: 2026,
+    opacity: 1, // Fade in to full opacity
+    scale: 1.1, // Slight zoom
+    "-webkit-text-stroke": "2px rgba(255, 255, 255, 0.4)", // Thicker, brighter stroke
     snap: { innerText: 1 },
+    ease: "power1.inOut"
 });
 
 // Story Blocks Parallax Reveal
@@ -143,7 +148,7 @@ const projectsWrapper = document.querySelector('.projects-wrapper');
 if (projectsWrapper) {
     const totalWidth = projectsWrapper.scrollWidth - window.innerWidth;
     
-    gsap.to(projectsWrapper, {
+    const horizontalScrollTween = gsap.to(projectsWrapper, {
         x: -totalWidth,
         ease: "none",
         scrollTrigger: {
@@ -165,7 +170,7 @@ if (projectsWrapper) {
             ease: "none",
             scrollTrigger: {
                 trigger: frame,
-                containerAnimation: gsap.getById("projectsScroll"), // Needs ID if used with main timeline, but let's simplify
+                containerAnimation: horizontalScrollTween,
                 start: "left right",
                 end: "right left",
                 scrub: true

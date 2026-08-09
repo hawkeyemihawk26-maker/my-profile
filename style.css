@@ -1,13 +1,13 @@
 :root {
-    --bg-color: #0a0a0a;
-    --text-color: #f5f5f5;
-    --text-dim: rgba(245, 245, 245, 0.5);
-    --accent-amber: #ffb400;
-    --accent-rust: #b7410e;
-    --font-heading: 'Bebas Neue', cursive;
-    --font-body: 'Inter', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
-    --transition-cinematic: cubic-bezier(0.65, 0, 0.35, 1);
+    --bg-color: #000000;
+    --text-color: #f5f5f7;
+    --text-dim: #86868b;
+    --accent-amber: #ffffff;
+    --accent-rust: #424245;
+    --font-heading: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --transition-cinematic: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 * {
@@ -62,65 +62,7 @@ body {
     transition: width 1s ease;
 }
 
-/* Noise Texture Overlay */
-.noise {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    pointer-events: none;
-    opacity: 0.05;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    animation: noise-anim 0.2s infinite steps(2);
-}
 
-@keyframes noise-anim {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    10% {
-        transform: translate(-1%, -1%);
-    }
-
-    20% {
-        transform: translate(-2%, 1%);
-    }
-
-    30% {
-        transform: translate(1%, -2%);
-    }
-
-    40% {
-        transform: translate(-1%, 2%);
-    }
-
-    50% {
-        transform: translate(-2%, -1%);
-    }
-
-    60% {
-        transform: translate(2%, 1%);
-    }
-
-    70% {
-        transform: translate(1%, 2%);
-    }
-
-    80% {
-        transform: translate(-1%, -2%);
-    }
-
-    90% {
-        transform: translate(2%, -1%);
-    }
-
-    100% {
-        transform: translate(0, 0);
-    }
-}
 
 
 /* Custom Cursor */
@@ -160,11 +102,15 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 4rem;
+    padding: 1.5rem 4rem;
     z-index: 1000;
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.8s var(--transition-cinematic);
+    background-color: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav-content {
@@ -235,8 +181,10 @@ body {
 .hero-headline {
     font-family: var(--font-heading);
     font-size: clamp(4rem, 15vw, 12rem);
-    line-height: 0.85;
+    line-height: 0.95;
     margin-bottom: 2rem;
+    letter-spacing: -0.04em;
+    font-weight: 700;
 }
 
 .hero-headline .line {
@@ -298,9 +246,11 @@ body {
     font-family: var(--font-heading);
     font-size: clamp(10rem, 30vw, 40rem);
     line-height: 1;
-    color: rgba(255, 255, 255, 0.03);
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.15);
     position: sticky;
-    top: 10%;
+    top: 20%;
+    opacity: 0.3;
 }
 
 .story-block {
@@ -315,6 +265,8 @@ body {
     font-size: 4rem;
     margin-bottom: 2rem;
     color: var(--accent-amber);
+    letter-spacing: -0.03em;
+    font-weight: 700;
 }
 
 .story-block p {
@@ -415,8 +367,10 @@ body {
 .p-title {
     font-family: var(--font-heading);
     font-size: 10rem;
-    line-height: 0.8;
+    line-height: 0.9;
     margin: 1rem 0 2rem;
+    letter-spacing: -0.04em;
+    font-weight: 700;
 }
 
 .p-desc {
