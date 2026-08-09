@@ -294,12 +294,12 @@ body {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
 }
 
 .skill-card {
-    padding: 3rem 2rem;
+    padding: 2rem 1rem;
     border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -311,8 +311,10 @@ body {
 
 .skill-card h3 {
     font-family: var(--font-heading);
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
     margin: 1rem 0;
+    line-height: 1.1;
+    word-wrap: break-word;
 }
 
 .skill-card p {
